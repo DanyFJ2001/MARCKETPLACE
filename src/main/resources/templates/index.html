@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancers Calificados</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/index2.css}">
+    <link rel="stylesheet" th:href="@{/css/carrusel.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <nav>
+        <a th:href="@{/}" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/formularioProveedor}" class="btn quiero">Quiero trabajar</a></li>
+            <li><a th:href="@{/formularioCliente}" class="btn trabajar">Quiero contratar</a></li>
+            <li><a th:href="@{/formularioPrestaciones}" class="btn trabajar">Prestaciones</a></li>
+            <li><a th:href="@{/formularioResenas}" class="btn trabajar">Reseñas</a></li>
+            <li><a th:href="@{/formularioContratos}" class="btn trabajar">Contrato</a></li>
+            <li><a th:href="@{/formularioAdmin}" class="btn trabajar">Nosotros</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<!-- Sección Hero -->
+<section class="hero">
+    <div class="text-content">
+        <p class="highlight">
+            <span>✔ Publicar es gratis</span> <span>✔ Garantía de satisfacción</span>
+            <span>✔ Pagos protegidos</span>
+        </p>
+        <h1><span class="highlight"></span> Encuentra expertos en plomería, electricidad, carpintería, pintura, jardinería y más, listos para ayudarte cuando lo necesites <span
+                class="highlight"></span></h1>
+        <p class="description">
+            Con profesionales calificados, podrás solicitar servicios de manera rápida, segura y confiable para tu hogar o negocio </p>
+
+    </div>
+
+</section>
+
+<section class="profesionales-titulo">
+    <h2>¿Con qué profesionales contamos?</h2>
+    <p>Descubre a los expertos disponibles para ayudarte en tus proyectos.</p>
+</section>
+<br>
+<br>
+<br>
+
+
+<!-- Sección del Carrusel -->
+<section>
+    <div class="container">
+        <div class="content">
+            <div class="introduce"></div>
+            <div class="thumbnail-list">
+                <div class="wrapper">
+                    <!-- Contenido del carrusel aquí -->
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="next-button">SIGUIENTE</button>
+            <span class="line"></span>
+            <span class="ordinal-number"></span>
+        </div>
+    </div>
+</section>
+
+<section class="testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonio">
+        <p>"¡Excelente servicio! El plomero llegó a tiempo y resolvió el problema rápidamente."</p>
+        <span>- María G.</span>
+    </div>
+    <div class="testimonio">
+        <p>"Muy profesionales y con precios justos. Los recomiendo totalmente."</p>
+        <span>- Juan P.</span>
+    </div>
+</section>
+
+<!-- Sección de Proceso de Contratación -->
+<section class="proceso-contratacion">
+    <h2>¿Cómo funciona?</h2>
+    <div class="pasos">
+        <div class="paso">
+            <span>1</span>
+            <p>Busca el profesional que necesitas.</p>
+        </div>
+        <div class="paso">
+            <span>2</span>
+            <p>Enviale un mensaje.</p>
+        </div>
+        <div class="paso">
+            <span>3</span>
+            <p>Lleguen a un acuerdo de contrato.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Preguntas Frecuentes -->
+<section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="pregunta">
+        <h3>¿Cómo puedo publicar un proyecto?</h3>
+        <p>Simplemente haz clic en "Quiero contratar" y sigue los pasos para publicar tu proyecto.</p>
+    </div>
+    <div class="pregunta">
+        <h3>¿Cómo se protegen los pagos?</h3>
+        <p>Utilizamos un sistema de pagos protegidos que garantiza la seguridad de tus transacciones.</p>
+    </div>
+</section>
+
+
+<!-- Pie de Página -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Workana</h3>
+            <ul>
+                <li><a th:href="@{/nosotros}" class="btn trabajar">Sobre Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Workana. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script th:src="@{/css/js/carru.js}"></script>
+</body>
+</html>

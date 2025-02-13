@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Administradores</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+<header>
+    <h1>Lista de Administradores</h1>
+</header>
+<main>
+    <form action="/admin/lista" method="get">
+        <input type="text" name="buscarAdmin" placeholder="Buscar por nombre" value="${buscarAdmin}">
+        <button type="submit">Buscar</button>
+    </form>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="admin" items="${admins}">
+            <tr>
+                <td>${admin.nombre}</td>
+                <td>${admin.apellido}</td>
+                <td>${admin.email}</td>
+                <td>${admin.username}</td>
+                <td>${admin.rol}</td>
+                <td>
+                    <a href="/admin/editar/${admin.id}">Editar</a> |
+                    <a href="/admin/eliminar/${admin.id}" onclick="return confirm('¿Estás seguro de eliminar este administrador?')">Eliminar</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    <br>
+    <a href="/admin/formulario">Agregar nuevo Administrador</a>
+</main>
+</body>
+</html>

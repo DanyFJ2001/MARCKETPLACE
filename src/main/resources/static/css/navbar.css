@@ -1,0 +1,95 @@
+/* Header y navegación */
+header {
+    background: #fff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #6a40e4; /* Color morado para el logo */
+    text-decoration: none;
+    margin-right: auto; /* Logo a la izquierda */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333; /* Color oscuro para los enlaces (visible desde el principio) */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6a40e4; /* Color morado al pasar el mouse */
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Botones a la derecha */
+}
+
+.buttons .btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.login {
+    color: #333; /* Color oscuro para el texto (visible desde el principio) */
+    border: 1px solid #6a40e4; /* Borde morado */
+}
+
+.register {
+    background: #6a40e4; /* Fondo morado */
+    color: white; /* Texto blanco */
+}
+
+.login:hover {
+    background: #6a40e4; /* Fondo morado al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}
+
+.register:hover {
+    background: #4b2ecc; /* Fondo morado más oscuro al pasar el mouse */
+}
+
+/* Estilos responsivos para la barra de navegación */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Oculta la lista de navegación en móviles */
+    }
+
+    .buttons {
+        flex-direction: column; /* Apila los botones en móviles */
+    }
+
+    header {
+        padding: 15px 5%; /* Reduce el padding en móviles */
+    }
+}

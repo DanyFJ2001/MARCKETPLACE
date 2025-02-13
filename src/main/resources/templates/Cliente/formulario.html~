@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- link css -->
+    <link rel="stylesheet" th:href="@{/css/cliente.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+</head>
+
+<body>
+<video autoplay muted loop id="background-video">
+    <source th:src="@{/css/imag/1.mp4}" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+</video>
+<header>
+    <nav>
+        <a th:href="@{/}" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/formularioProveedor}" class="btn quiero">Quiero trabajar</a></li>
+            <li><a th:href="@{/formularioCliente}" class="btn trabajar">Quiero contratar</a></li>
+            <li><a th:href="@{/formularioPrestaciones}" class="btn trabajar">Prestaciones</a></li>
+            <li><a th:href="@{/formularioResenas}" class="btn trabajar">Reseñas</a></li>
+            <li><a th:href="@{/formularioContratos}" class="btn trabajar">Contrato</a></li>
+            <li><a th:href="@{/nosotros}" class="btn trabajar">Nosotros</a></li>
+        </ul>
+
+    </nav>
+</header>
+<div class="container">
+    <div class="box">
+        <div class="form sign_in">
+            <h3>Iniciar Sesión</h3>
+            <span>O usa tu cuenta</span>
+
+            <form action="/vistaCliente" method="get" id="form_input">
+                <div class="type">
+                    <input type="email" placeholder="Correo Electrónico" name="email" id="email">
+                </div>
+                <div class="type">
+                    <input type="password" placeholder="Contraseña" name="password" id="password">
+                </div>
+
+                <div class="forgot">
+                    <span>¿Olvidaste tu contraseña?</span>
+                </div>
+
+                <button class="btn bkg">Iniciar Sesión</button>
+            </form>
+        </div>
+
+        <div class="form sign_up">
+            <form th:action="@{/registrarCliente}" method="post" th:object="${cliente}" id="form_input">
+                <div class="type">
+                    <input type="text" name="nombre" placeholder="Nombre Completo" id="nombre" th:field="*{nombre}" required />
+                </div>
+
+                <div class="type">
+                    <input type="email" name="email" placeholder="Correo Electrónico" id="email" th:field="*{email}" required />
+                </div>
+
+                <div class="type">
+                    <input type="text" name="apellido" placeholder="Apellido" id="apellido" th:field="*{apellido}" required />
+                </div>
+
+                <div class="type">
+                    <input type="text" name="username" placeholder="Nombre de Usuario" id="username" th:field="*{username}" required />
+                </div>
+
+                <div class="type">
+                    <input type="password" name="password" placeholder="Contraseña" id="password" th:field="*{password}" required />
+                </div>
+
+                <div class="type">
+                    <label for="rol">Rol</label>
+                    <select name="rol" id="rol" th:field="*{rol}" required>
+                        <option value="CLIENTE">ADMIN</option>
+                        <option value="PROVEEDOR">BIBLIOTECARIO</option>
+                        <option value="ADMIN">ESTUDIANTE</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn bkg">Guardar</button>
+            </form>
+        </div>
+
+        </div>
+
+    <div class="overlay">
+        <div class="page page_signIn">
+            <h3>¡Bienvenido de Nuevo!</h3>
+            <p>Para continuar con nosotros, inicia sesión con tu información personal</p>
+
+            <button class="btn btnSign-in">Registrarse <i class="bi bi-arrow-right"></i></button>
+        </div>
+
+        <div class="page page_signUp">
+            <h3>¡Hola y Bienvenido!</h3>
+            <p>Ingresa tus datos y empieza a contratar a los mejores profesionales para tus necesidades</p>
+
+            <button class="btn btnSign-up">
+                <i class="bi bi-arrow-left"></i> Iniciar Sesión
+            </button>
+        </div>
+    </div>
+</div>
+<script th:src="@{/css/js/cliente.js}"></script>
+</body>
+</html>

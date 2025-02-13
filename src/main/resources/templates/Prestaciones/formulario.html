@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/formularioCliente.css}">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet">
+    <title>Formulario Prestaciones</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a th:href="@{/}" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/formularioProveedor}" class="btn quiero">Quiero contratar</a></li>
+            <li><a th:href="@{/formularioCliente}" class="btn trabajar">Quiero trabajar</a></li>
+            <li><a th:href="@{/formularioPrestaciones}" class="btn trabajar">Prestaciones</a></li>
+            <li><a th:href="@{/formularioResenas}" class="btn trabajar">Reseñas</a></li>
+            <li><a th:href="@{/formularioContratos}" class="btn trabajar">Contrato</a></li>
+            <li><a th:href="@{/nosotros}" class="btn trabajar">Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="max-w-lg mx-auto form-container">
+        <h2 class="form-title mb-6">Registro de Prestación</h2>
+        <form th:action="@{/registrarPrestaciones}" method="post" th:object="${prestacion}">
+            <div class="form-group">
+                <input type="number" id="id" th:field="*{id}" hidden />
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" required />
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" th:field="*{descripcion}" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" th:field="*{precio}" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="proveedor">Proveedor:</label>
+                <select id="proveedor" th:field="*{proveedor.id}" required>
+                    <option value="">Seleccione un proveedor</option>
+                    <option th:each="proveedor : ${proveedores}" th:value="${proveedor.id}" th:text="${proveedor.nombre}"></option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar</button>
+        </form>
+    </div>
+</div>
+
+<footer class="footer-content">
+    <p>&copy; 2025 Workana. Todos los derechos reservados.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+</body>
+</html>

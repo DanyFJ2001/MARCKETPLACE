@@ -1,0 +1,312 @@
+/* Estilos generales */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f9f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header y navegación */
+header {
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #6a40e4;
+    text-decoration: none;
+    margin-right: auto; /* Logo a la izquierda */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #6a40e4;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Botones a la derecha */
+}
+
+.buttons .btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, color 0.3s;
+}
+
+.login {
+    color: #333;
+    border: 1px solid #6a40e4;
+}
+
+.register {
+    background: #6a40e4;
+    color: white;
+}
+
+.login:hover {
+    background: #6a40e4;
+    color: white;
+}
+
+.register:hover {
+    background: #4b2ecc;
+}
+
+/* Estilos para el título de profesionales */
+.profesionales-titulo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Asegura que el texto esté centrado */
+    padding: 60px 10%; /* Espaciado superior e inferior */
+    background-color: #f9f9ff; /* Fondo claro para contrastar */
+    min-height: 300px; /* Altura mínima para centrar verticalmente */
+}
+
+.profesionales-titulo h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #6a40e4; /* Color morado */
+    margin-bottom: 10px;
+}
+
+.profesionales-titulo p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    color: #6a40e4; /* Color morado */
+    margin-top: 0;
+}
+
+/* Sección Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px 10% 80px; /* Ajuste para el header fijo */
+    gap: 50px;
+    background: url('/css/imag/fon.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    position: relative; /* Para posicionar elementos hijos relativamente */
+    color: #333; /* Color del texto (ajusta según la imagen de fondo) */
+}
+
+/* Aplicar opacidad para que el fondo no opaque el texto */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);  /* Aumento de opacidad */
+    z-index: 1;
+}
+
+/* Asegúrate de que el contenido esté por encima de la imagen de fondo */
+.hero .text-content, .hero .image-content {
+    position: relative;
+    z-index: 2; /* Coloca el contenido por encima de la imagen de fondo */
+}
+
+.hero h1 {
+    color: #fff;  /* Color blanco para el título */
+}
+
+.hero .description {
+    color: #fff;  /* Color blanco para la descripción */
+}
+
+.hero .btn.primary {
+    background: #6a40e4;
+    color: white;
+}
+
+.hero .btn.primary:hover {
+    background: #4b2ecc;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 5% 50px;
+    }
+
+    .hero .text-content {
+        text-align: center; /* Centra el texto en móviles */
+    }
+
+    .hero .image-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.text-content {
+    max-width: 500px;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.small-text span {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #6a40e4;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
+    margin: 15px 0;
+}
+
+.btn.primary {
+    background: #6a40e4;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn.primary:hover {
+    background: #4b2ecc;
+}
+
+.link {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #6a40e4;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #4b2ecc;
+}
+
+.image-content {
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.image-content img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.icons {
+    position: absolute;
+    top: 10%;
+    right: 10%; /* Ajusta según sea necesario */
+    transform: translateY(-50%);
+}
+
+.icon {
+    display: block;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #6a40e4;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #4b2ecc;
+}
+
+/* Secciones */
+.section {
+    padding: 80px 10%;
+    min-height: 100vh; /* Asegura que la sección ocupe toda la pantalla */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 5% 50px;
+    }
+
+    .text-content {
+        text-align: center; /* Centra el texto en móviles */
+    }
+
+    .image-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+
+
+
+}

@@ -1,0 +1,26 @@
+package com.itsqmet.app_hotel.Servicio;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserDetailsService {
+    @Autowired
+    private ClienteServicio clienteServicio;
+
+    @Autowired
+    private ProveedorServicio proveedorServicio; // Servicio que gestiona los proveedores
+
+
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        try {
+            // Primero buscamos al usuario como cliente
+            return clienteServicio.loadUserByUsername(username);
+        } catch (UsernameNotFoundException e1) {
+            // Si no se encuentra como cliente, buscamos como proveedor
+            return proveedorServicio.loadUserByUsername(username);
+        }
+    }
+}

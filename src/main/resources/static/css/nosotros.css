@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.hero {
+    background: url('/css/imag/nosotros.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero .text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero .text-content .description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mision-vision, .por-que-elegirnos, .contacto {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #d1d3d8 !important;
+    padding: 40px 10% !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    text-align: center !important;
+    margin-top: 80px !important;
+}
+
+.container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contacto input, .contacto textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contacto button {
+    padding: 0.8rem 1.5rem;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contacto button:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #6a40e4;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+.por-que-elegirnos {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.por-que-elegirnos h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.razones {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.razon {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.mision-vision h2 {
+    color: #6a40e4;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.por-que-elegirnos h2 {
+    color: #6a40e4;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.hero h1 {
+    color: #6a40e4; /* Cambia esto por el color que prefieras */
+    font-weight: bold;
+}
+
+
+

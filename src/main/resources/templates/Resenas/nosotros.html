@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/index2.css}">
+    <link rel="stylesheet" th:href="@{/css/nosotros.css}">
+
+    <title>Sobre Nosotros - Workana</title>
+
+</head>
+<body>
+<header>
+    <nav>
+        <a th:href="@{/}" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/formularioProveedor}" class="btn quiero">Quiero contratar</a></li>
+            <li><a th:href="@{/formularioCliente}" class="btn trabajar">Quiero trabajar</a></li>
+            <li><a th:href="@{/formularioPrestaciones}" class="btn trabajar">Prestaciones</a></li>
+            <li><a th:href="@{/formularioResenas}" class="btn trabajar">Reseñas</a></li>
+            <li><a th:href="@{/formularioContratos}" class="btn trabajar">Contrato</a></li>
+            <li><a th:href="@{/nosotros}" class="btn trabajar">Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Sección Hero - Sobre Nosotros -->
+<section class="hero">
+    <div class="text-content">
+        <h1>Sobre Nosotros</h1>
+        <p class="description">
+            En Workana conectamos a profesionales expertos con personas y empresas que necesitan sus servicios. Nuestro objetivo es simplificar la contratación de servicios locales de plomería, electricidad, carpintería, jardinería y muchos más.
+        </p>
+    </div>
+</section>
+
+<!-- Sección Misión, Visión y Valores -->
+<section class="mision-vision">
+    <div class="container">
+        <div class="card">
+            <h2>Misión</h2>
+            <p>Facilitar la conexión entre clientes y profesionales calificados, brindando una plataforma segura y confiable para la contratación de servicios.</p>
+        </div>
+        <div class="card">
+            <h2>Visión</h2>
+            <p>Ser el Marketplace de servicios líder en Latinoamérica, reconocido por nuestra transparencia, seguridad y compromiso con la calidad.</p>
+        </div>
+        <div class="card">
+            <h2>Valores</h2>
+            <ul>
+                <li>Compromiso con la calidad</li>
+                <li>Confianza y transparencia</li>
+                <li>Innovación constante</li>
+                <li>Servicio al cliente excepcional</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Sección ¿Por qué elegirnos? -->
+<section class="por-que-elegirnos">
+    <h2>¿Por qué elegirnos?</h2>
+    <div class="razones">
+        <div class="razon">
+            <h3>Plataforma Segura</h3>
+            <p>Garantizamos la protección de tus datos y transacciones.</p>
+        </div>
+        <div class="razon">
+            <h3>Amplia Variedad de Servicios</h3>
+            <p>Desde reparaciones del hogar hasta servicios profesionales especializados.</p>
+        </div>
+        <div class="razon">
+            <h3>Profesionales Verificados</h3>
+            <p>Trabajamos solo con profesionales calificados y con referencias comprobadas.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Pie de Página -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Workana. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>

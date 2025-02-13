@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #f9f9ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+button {
+    font-family: "Rubik", sans-serif;
+    background-color: transparent;
+    border: 1px solid white;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 50px;
+    transition: 0.5s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.container {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #767676;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffffff;
+}
+
+.container .content {
+    width: 100%;
+    display: flex;
+    align-content: flex-end;
+
+}
+
+.container .introduce {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    z-index: 20;
+
+}
+
+.introduce .wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 0.25px 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+
+}
+
+.introduce .wrapper span {
+    overflow: hidden;
+}
+
+.introduce .wrapper span>* {
+
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: translateY(300px);
+    transition-delay: calc((3 -var(--idx)) * 0.1s);
+
+}
+
+.introduce .wrapper.active {
+
+
+    pointer-events: all;
+
+}
+
+.introduce .wrapper.active span>* {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc((var(--idx)) * 0.1s);
+}
+
+
+
+.introduce .place {
+
+    font-family: bebas neue;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.introduce .describe {
+    font-size: 1rem;
+    margin-top: 8px;
+    font-weight: 300;
+
+}
+
+.introduce .discover-button {
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
+.content .thumbnail-list {
+    position: relative;
+    height: 300px;
+    flex: 1;
+
+
+}
+
+.thumbnail-list .wrapper {
+    position: relative;
+    z-index: 10;
+    height: 300px;
+
+}
+
+.thumbnail-list .wrapper .thumbnail {
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.75s cubic-bezier(0.6,0.1,0.3,1);
+    transform: translateX(calc(var(--idx) * 230px));
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+.thumbnail-list .wrapper .thumbnail.zoom {
+    width: 1280px;
+    height: 720px;
+    transform: translate(-512px,-270px); /* sube más arriba */
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    box-shadow: none;
+}
+
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.container .navigation {
+margin-left: 40%;
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 50px 50px 50px 0;
+z-index: 20;
+
+}
+.navigation .next-button {
+    width: 180px;
+    border-radius: 50px;
+
+}
+
+.navigation .line {
+    flex: 1;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.navigation .ordinal-number {
+ position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 50px;
+ width: 50px;
+ overflow: hidden;
+
+}
+.ordinal-number h2 {
+
+    position: absolute;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    transform: translateY(200px);
+    transition: 0.5s ease;
+}
+
+.ordinal-number.active h2 {
+    transform: unset
+}
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+
+}
+/* Sección de Testimonios */
+.testimonios {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 2rem;
+    color: #6a40e4;
+    margin-bottom: 40px;
+}
+
+.testimonio {
+    background-color: #f9f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonio p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonio span {
+    font-size: 0.9rem;
+    color: #6a40e4;
+    font-weight: 600;
+}
+
+/* Sección de Proceso de Contratación */
+.proceso-contratacion {
+    padding: 80px 10%;
+    background-color: #f9f9ff;
+    text-align: center;
+}
+
+.proceso-contratacion h2 {
+    font-size: 2rem;
+    color: #6a40e4;
+    margin-bottom: 40px;
+}
+
+.pasos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.paso {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 250px;
+}
+
+.paso span {
+    font-size: 2rem;
+    color: #6a40e4;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.paso p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Sección de Preguntas Frecuentes */
+.faq {
+    padding: 80px 10%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    color: #6a40e4;
+    margin-bottom: 40px;
+}
+
+.pregunta {
+    background-color: #f9f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.pregunta h3 {
+    font-size: 1.2rem;
+    color: #6a40e4;
+    margin-bottom: 10px;
+}
+
+.pregunta p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Sección de Contacto */
+.contacto {
+    padding: 80px 10%;
+    background-color: #f9f9ff;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    color: #6a40e4;
+    margin-bottom: 40px;
+}
+
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contacto textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contacto button {
+    background-color: #6a40e4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contacto button:hover {
+    background-color: #4b2ecc;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #6a40e4;
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    max-width: 250px;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f9f9ff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}

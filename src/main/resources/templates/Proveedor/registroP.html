@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Proveedor</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/carrusel.css}">
+    <link rel="stylesheet" th:href="@{/css/proveedor.css}"> 
+</head>
+
+<header>
+    <nav>
+        <a href="#" class="logo">workana</a>
+        <ul>
+            <li><a th:href="@{/index}" class="btn quiero">Home</a></li>
+        </ul>
+        <div class="buttons">
+            <a href="#" class="btn login">Ingresa</a>
+            <a href="#" class="btn register">Regístrate</a>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-sidebar">
+            <h2>Bienvenido a Workana</h2>
+            <p>Completa el siguiente formulario para registrar tu proveedor en nuestra plataforma.</p>
+        </div>
+
+        <div class="auth-main">
+            <h1>Registro de Proveedor</h1>
+            <form th:action="@{relacionarProveedor}" th:object="${proveedor}" method="post">
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" th:field="*{nombre}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Especialidad:</label>
+                    <input type="text" th:field="*{especialidad}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('especialidad')}" th:errors="*{especialidad}" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Experiencia:</label>
+                    <input type="text" th:field="*{experiencia}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('experiencia')}" th:errors="*{experiencia}" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Tarifas:</label>
+                    <input type="text" th:field="*{tarifas}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('tarifas')}" th:errors="*{tarifas}" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Correo:</label>
+                    <input type="email" th:field="*{correo}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}" class="error-message"></div>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono:</label>
+                    <input type="text" th:field="*{telefono}" class="form-control" />
+                    <div th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}" class="error-message"></div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

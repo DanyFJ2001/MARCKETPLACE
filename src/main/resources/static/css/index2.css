@@ -1,0 +1,61 @@
+.testimonios,
+.proceso-contratacion,
+.faq,
+.profesionales-titulo {
+    background-color: #d1d3d8 !important;
+    padding: 40px 10% !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    text-align: center !important;
+    margin-top: 80px !important;
+}
+
+/* Estilo del párrafo en profesionales-titulo */
+.profesionales-titulo p {
+    color: #6c6c6c;
+}
+
+/* Responsividad para tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .testimonios,
+    .proceso-contratacion,
+    .faq,
+    .profesionales-titulo {
+        padding: 30px 8% !important;
+        margin-top: 60px !important;
+    }
+
+    .profesionales-titulo p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividad para móviles (max-width: 768px) */
+@media (max-width: 768px) {
+    .testimonios,
+    .proceso-contratacion,
+    .faq,
+    .profesionales-titulo {
+        padding: 20px 5% !important;
+        margin-top: 40px !important;
+    }
+
+    .profesionales-titulo p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividad para móviles pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+    .testimonios,
+    .proceso-contratacion,
+    .faq,
+    .profesionales-titulo {
+        padding: 15px 3% !important;
+        margin-top: 30px !important;
+    }
+
+    .profesionales-titulo p {
+        font-size: 0.8rem;
+    }
+}
