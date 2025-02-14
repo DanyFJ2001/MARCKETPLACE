@@ -37,13 +37,13 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #333; /* Color oscuro para los enlaces (visible desde el principio) */
+    color: #666 !important; /* Color oscuro para los enlaces (visible desde el principio) */
     font-weight: 600;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #6a40e4; /* Color morado al pasar el mouse */
+    color: #6a40e4 !important; /* Color morado al pasar el mouse */
 }
 
 .buttons {
@@ -61,18 +61,18 @@ nav ul li a:hover {
 }
 
 .login {
-    color: #333; /* Color oscuro para el texto (visible desde el principio) */
+    color: #666 !important; /* Color oscuro para el texto (visible desde el principio) */
     border: 1px solid #6a40e4; /* Borde morado */
 }
 
 .register {
     background: #6a40e4; /* Fondo morado */
-    color: white; /* Texto blanco */
+    color: #666 !important; /* Texto blanco */
 }
 
 .login:hover {
     background: #6a40e4; /* Fondo morado al pasar el mouse */
-    color: white; /* Texto blanco al pasar el mouse */
+    color: #666 !important; /* Texto blanco al pasar el mouse */
 }
 
 .register:hover {
