@@ -1,5 +1,6 @@
 package com.itsqmet.app_hotel.Controlador;
 
+import com.itsqmet.app_hotel.Entidad.Cliente;
 import com.itsqmet.app_hotel.Entidad.Prestaciones;
 import com.itsqmet.app_hotel.Entidad.Proveedor;
 import com.itsqmet.app_hotel.Roles.Rol;
@@ -26,6 +27,7 @@ public class ProveedorControlador {
     public String listarProveedores(@RequestParam(name = "buscarProveedor", required = false, defaultValue = "") String buscarProveedor, Model model) {
         List<Proveedor> proveedores = proveedorServicio.buscarProveedorNombre(buscarProveedor);
         model.addAttribute("buscarProveedor", buscarProveedor);
+        model.addAttribute("proveedores", proveedores); // Cambié el nombre del atributo a 'proveedores'
         return "Proveedor/listaProveedor"; // Vista de proveedores
     }
 
@@ -60,7 +62,7 @@ public class ProveedorControlador {
                                     @RequestParam Rol rol) throws Exception {
 
         proveedorServicio.guardarProveedor(id, nombre, especialidad, experiencia, tarifas, correo, telefono, username, password, rol);
-        return "redirect:/proveedores";
+        return "redirect:/formularioLogin";
     }
 
     // Actualizar proveedor

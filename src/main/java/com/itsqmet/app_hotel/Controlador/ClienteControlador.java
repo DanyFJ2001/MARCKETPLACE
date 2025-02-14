@@ -76,7 +76,7 @@ public class ClienteControlador {
                                   @RequestParam String password,
                                   @RequestParam Rol rol) throws Exception {
         clienteServicio.guardarCliente(id, nombre, apellido, email ,username, password, rol);
-        return "redirect:/clientes";
+        return "redirect:/formularioLogin";
     }
 
     // Actualizar

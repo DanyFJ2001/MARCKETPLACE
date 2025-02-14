@@ -76,7 +76,7 @@ public class AdminControlador {
                                 @RequestParam String password,
                                 @RequestParam Rol rol) throws Exception {
         adminServicio.guardarAdmin(id, nombre, apellido, email, username, password, rol);
-        return "redirect:/admins";
+        return "redirect:/formularioLogin";
     }
 
     // Actualizar

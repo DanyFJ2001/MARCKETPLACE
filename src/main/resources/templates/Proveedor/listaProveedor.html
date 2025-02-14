@@ -22,23 +22,30 @@
             <th>Código</th>
             <th>Nombre</th>
             <th>Especialidad</th>
+            <th>Experiencia</th>
+            <th>Tarifas</th>
             <th>Correo</th>
             <th>Teléfono</th>
+            <th>Username</th>
             <th>Opciones</th>
         </tr>
         </thead>
         <tbody>
-
+        <!-- Iteración de proveedores -->
         <tr th:each="proveedor : ${proveedores}">
             <td th:text="${proveedor.id}"></td>
             <td th:text="${proveedor.nombre}"></td>
             <td th:text="${proveedor.especialidad}"></td>
+            <td th:text="${proveedor.experiencia}"></td>
+            <td th:text="${proveedor.tarifas}"></td>
             <td th:text="${proveedor.correo}"></td>
             <td th:text="${proveedor.telefono}"></td>
+            <td th:text="${proveedor.username}"></td>
 
             <td>
-                <a th:href="@{/actualizarProveedor/} + ${proveedor.id}" class="btn btn-warning">Actualizar</a>
-                <a th:href="@{/eliminarProveedor/} + ${proveedor.id}" class="btn btn-danger">Eliminar</a>
+                <!-- Botones de acción -->
+                <a th:href="@{'/actualizarProveedor/' + ${proveedor.id}}" class="btn btn-warning">Actualizar</a>
+                <a th:href="@{'/eliminarProveedor/' + ${proveedor.id}}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>
