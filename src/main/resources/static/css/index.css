@@ -135,7 +135,23 @@ nav ul li a:hover {
     position: relative; /* Para posicionar elementos hijos relativamente */
     color: #333; /* Color del texto (ajusta según la imagen de fondo) */
 }
+.section {
+    padding: 80px 10%;
+    min-height: 100vh; /* Asegura que la sección ocupe toda la pantalla */
+}
+a.login-button {
+    border: 2px solid #6a40e4;
+    color: #6a40e4;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+a.login-button:hover {
+    background-color: #6a40e4;
+    color: white;
+}
 /* Aplicar opacidad para que el fondo no opaque el texto */
 .hero::before {
     content: "";

@@ -34,11 +34,10 @@ public class PrestacionesControlador {
         return "Prestaciones/formulario";
     }
 
-
     @PostMapping("/registrarPrestaciones")
     public String insertarPrestaciones(@ModelAttribute Prestaciones prestacion) {
         prestacionesServicios.guardarPrestaciones(prestacion);
-        return "redirect:/prestaciones";
+        return "redirect:/vistaProveedor";
     }
 
 

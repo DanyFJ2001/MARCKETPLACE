@@ -6,6 +6,7 @@
     --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
+
 /* Estilos generales */
 body.login-background {
     background: var(--background-gradient);
