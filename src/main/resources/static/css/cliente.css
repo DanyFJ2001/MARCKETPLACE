@@ -118,6 +118,13 @@ body {
     border-radius: 30px; /* Redondeado externo */
     overflow: hidden;
 }
+.imagen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+}
+
+
 
 @keyframes Hidden {
     0%, 49.999% {
