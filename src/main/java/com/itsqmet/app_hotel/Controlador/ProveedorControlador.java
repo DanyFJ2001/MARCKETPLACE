@@ -1,7 +1,9 @@
 package com.itsqmet.app_hotel.Controlador;
 
+import com.itsqmet.app_hotel.Entidad.Prestaciones;
 import com.itsqmet.app_hotel.Entidad.Proveedor;
 import com.itsqmet.app_hotel.Roles.Rol;
+import com.itsqmet.app_hotel.Servicio.PrestacionesServicios;
 import com.itsqmet.app_hotel.Servicio.ProveedorServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,13 +18,14 @@ public class ProveedorControlador {
 
     @Autowired
     ProveedorServicio proveedorServicio;
+    @Autowired
+    PrestacionesServicios prestacionesServicios;
 
     // Leer proveedores
     @GetMapping("/proveedores")
     public String listarProveedores(@RequestParam(name = "buscarProveedor", required = false, defaultValue = "") String buscarProveedor, Model model) {
         List<Proveedor> proveedores = proveedorServicio.buscarProveedorNombre(buscarProveedor);
         model.addAttribute("buscarProveedor", buscarProveedor);
-        model.addAttribute("proveedores", proveedores);
         return "Proveedor/listaProveedor"; // Vista de proveedores
     }
 
@@ -30,10 +33,11 @@ public class ProveedorControlador {
     @GetMapping("/vistaProveedor")
     public String vistaProveedor(Model model) {
         List<Proveedor> proveedores = proveedorServicio.mostrarProveedores(); // obtener lista de proveedores
-        model.addAttribute("proveedores", proveedores); // pasamos la lista de proveedores
-        model.addAttribute("proveedor", new Proveedor()); // para el formulario de proveedor
-        return "Proveedor/VistaProveedor"; // retornamos la vista
+        model.addAttribute("proveedores", proveedores); // pasar la lista de proveedores
+        model.addAttribute("prestacion", new Prestaciones()); // objeto vacío para el formulario de prestaciones
+        return "Proveedor/VistaProveedor"; // nombre de la vista donde mostrarás el formulario
     }
+
 
     // Mostrar formulario proveedor
     @GetMapping("/formularioProveedor")

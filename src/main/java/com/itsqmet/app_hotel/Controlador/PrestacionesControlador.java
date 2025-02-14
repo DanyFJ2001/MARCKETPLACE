@@ -30,7 +30,6 @@ public class PrestacionesControlador {
     @GetMapping("/formularioPrestaciones")
     public String mostrarFormularioPrestaciones(Model model) {
         List<Proveedor> proveedores = proveedorServicio.mostrarProveedores();
-        model.addAttribute("prestacion", new Prestaciones());
         model.addAttribute("proveedores", proveedores);
         return "Prestaciones/formulario";
     }
